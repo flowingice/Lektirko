@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Lektirko</string>
+    <string name="name">Ime</string>
+    <string name="lastName">Prezime</string>
+    <string name="identifier">OIB</string>
+    <string name="login">PRIJAVI ME</string>
+    <string name="search_local_books">Pretraži spremljene lektire</string>
+    <string name="my_books">Moje lektire</string>
+    <string name="add_book">Dodaj knjigu</string>
+    <string name="book_title">Naslov knjige</string>
+    <string name="book_author">Ime i prezime pisca</string>
+    <string name="save">Spremi</string>
+    <string name="cancel">Odustani</string>
+    <string name="answered">Odgovoreno</string>
+    <string name="not_answered">Nije odgovoreno</string>
+    <string name="log_reading">Evidentiraj čitanje</string>
+    <string name="hours_read">Sati čitano:</string>
+    <string name="questions_answered">Pitanja \nodgovoreno:</string>
 </resources>
