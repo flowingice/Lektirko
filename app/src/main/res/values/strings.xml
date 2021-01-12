@@ -23,4 +23,8 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="placeholder">Placeholder</string>
+    <string name="reading_date">Datum čitanja</string>
+    <string name="reading_duration">Trajanje čitanja</string>
+    <string name="reading_number_of_pages">Broj stranica</string>
+    <string name="add_reading_log">Dodaj zapis</string>
 </resources>

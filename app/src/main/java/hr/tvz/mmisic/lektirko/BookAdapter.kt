@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 
 class BookAdapter(private val context: Context,
-                  private val dataSource: ArrayList<ListItem>) : BaseAdapter() {
+                  private val dataSource: ArrayList<BookItem>) : BaseAdapter() {
 
     private val inflater: LayoutInflater
             = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -30,11 +30,11 @@ class BookAdapter(private val context: Context,
         val rowView = convertView ?: inflater.inflate(R.layout.adapter_book_list_layout, parent, false)
 
         val bookAuthorField = rowView.findViewById(R.id.author) as TextView
-        val bookTitleField = rowView.findViewById(R.id.title) as TextView
+        val bookTitleField = rowView.findViewById(R.id.book_title) as TextView
         val bookHoursField = rowView.findViewById(R.id.hoursRead) as TextView
         val bookQuestionsField = rowView.findViewById(R.id.questionsAnswered) as TextView
 
-        val currentBook = getItem(position) as ListItem
+        val currentBook = getItem(position) as BookItem
         bookAuthorField.text = currentBook.bookAuthor
         bookTitleField.text = currentBook.bookTitle
         bookHoursField.text = currentBook.hoursRead

@@ -10,7 +10,7 @@ import android.widget.TextView
 
 class BookQuestionAdapter(
     private val context: Context,
-    private val dataSource: ArrayList<ListItem>
+    private val dataSource: ArrayList<BookQuestion>
 ) : BaseAdapter() {
 
     private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -28,19 +28,19 @@ class BookQuestionAdapter(
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val rowView = convertView ?: inflater.inflate(R.layout.adapter_book_list_layout, parent, false)
+        val rowView = convertView ?: inflater.inflate(R.layout.adapter_book_question_layout, parent, false)
 
         val question = rowView.findViewById(R.id.question) as TextView
         val isAnswered = rowView.findViewById(R.id.isAnswered) as TextView
 
         val currentQuestion = getItem(position) as BookQuestion
         question.text = currentQuestion.question
-        isAnswered.text = if (currentQuestion.isAnswered) {
+        isAnswered.text = if (currentQuestion.answer.isNotEmpty()) {
             isAnswered.setTextColor(Color.GREEN)
-            R.string.answered.toString()
+            context.getString(R.string.answered)
         } else {
             isAnswered.setTextColor(Color.RED)
-            R.string.not_answered.toString()
+            context.getString(R.string.not_answered)
         }
 
         return rowView

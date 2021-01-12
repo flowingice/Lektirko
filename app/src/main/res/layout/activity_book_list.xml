@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/purple_bg"
             android:id="@+id/constraintLayout" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
         <EditText
@@ -27,7 +27,8 @@
                 android:id="@+id/editTextTextPersonName2" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" android:hint="@string/search_local_books"
-                android:autofillHints="@string/search_local_books" tools:ignore="RtlSymmetry"/>
+                android:autofillHints="@string/search_local_books" tools:ignore="RtlSymmetry"
+        />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
