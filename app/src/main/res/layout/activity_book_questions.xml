@@ -78,13 +78,14 @@
             android:id="@+id/constraintLayout2" tools:ignore="RtlSymmetry">
 
         <Button
-                android:text="@string/log_reading"
+                android:text="@string/reading_log"
                 android:layout_width="134dp"
                 android:background="@drawable/btn_small_rounded"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:layout_height="40dp" android:id="@+id/button"
                 app:layout_constraintStart_toStartOf="parent"
+                android:onClick="showQuestions"
                 app:layout_constraintTop_toTopOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ListView

@@ -1,15 +1,15 @@
 package hr.tvz.mmisic.lektirko
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import kotlinx.android.synthetic.main.adapter_book_reading_log_entry_layout.view.*
+import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
 
 class BookReadingLogAdapter(
     private val context: Context,
@@ -38,9 +38,9 @@ class BookReadingLogAdapter(
         val noOfPages = rowView.findViewById(R.id.reading_no_pages) as TextView
 
         val currentLog = getItem(position) as LogItem
-        date.text = currentLog.readingDate.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT))
-        duration.text = currentLog.readingDuration.toString()
-        noOfPages.text = noOfPages.reading_no_pages.toString()
+        date.text = currentLog.readingDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy."))
+        duration.text = DecimalFormat("###.#").format(currentLog.readingDuration)
+        noOfPages.text = currentLog.readingNoOfPages.toString()
 
         return rowView
     }

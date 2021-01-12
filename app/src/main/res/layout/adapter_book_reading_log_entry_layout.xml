@@ -7,8 +7,8 @@
                                                    android:background="@drawable/book_card_bg"
 
                                                    android:id="@+id/book_adapter_layout"
-                                                   android:paddingBottom="16dp" android:paddingLeft="20dp"
-                                                   android:paddingTop="4dp" android:paddingRight="4dp">
+                                                   android:paddingBottom="16dp" android:paddingStart="20dp"
+                                                   android:paddingTop="8dp" android:paddingEnd="20dp">
     <TextView
             android:text="@string/reading_date"
             android:layout_width="wrap_content"
@@ -30,21 +30,30 @@
 
     <TextView
             android:text="@string/placeholder"
+            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/reading_date"
             app:layout_constraintTop_toBottomOf="@+id/lbl_reading_date"
             app:layout_constraintStart_toStartOf="@+id/lbl_reading_date"/>
     <TextView
             android:text="@string/placeholder"
+            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/reading_duration"
             app:layout_constraintTop_toBottomOf="@+id/lbl_reading_duration"
             app:layout_constraintStart_toStartOf="@+id/lbl_reading_duration"/>
     <TextView
             android:text="@string/placeholder"
+            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/reading_no_pages"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lbl_reading_no_pages" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_reading_no_pages"
             app:layout_constraintStart_toStartOf="@+id/lbl_reading_no_pages"/>
+    <TextView
+            android:text="h"
+            android:layout_marginStart="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/lbl_log_hours"
+            app:layout_constraintTop_toTopOf="@+id/reading_duration"
+            app:layout_constraintStart_toEndOf="@+id/reading_duration"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

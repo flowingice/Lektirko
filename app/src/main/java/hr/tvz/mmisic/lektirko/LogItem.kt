@@ -5,6 +5,6 @@ import java.time.LocalDate
 data class LogItem(
     val id: Int,
     val readingDate: LocalDate,
-    val readingDuration: Int,
+    val readingDuration: Float,
     val readingNoOfPages: Int
 )
