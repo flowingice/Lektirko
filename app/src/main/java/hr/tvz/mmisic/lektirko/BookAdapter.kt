@@ -38,8 +38,8 @@ class BookAdapter(
         val currentBook = getItem(position) as BookItem
         bookAuthorField.text = currentBook.bookAuthor
         bookTitleField.text = currentBook.bookTitle
-        bookHoursField.text = currentBook.hoursRead
-        bookQuestionsField.text = currentBook.questionsAnswered
+        bookHoursField.text = "REMOVED"
+        bookQuestionsField.text = "NOT_IMPLEMENTED_YET"
 
 
         return rowView

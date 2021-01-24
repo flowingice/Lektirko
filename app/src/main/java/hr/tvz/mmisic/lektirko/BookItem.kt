@@ -1,9 +1,13 @@
 package hr.tvz.mmisic.lektirko
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "book_items")
 data class BookItem(
-    var bookId: Int,
     val bookTitle: String,
-    val bookAuthor: String,
-    val hoursRead: String,
-    val questionsAnswered: String
-)
+    val bookAuthor: String
+){
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null
+}

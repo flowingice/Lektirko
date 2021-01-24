@@ -22,16 +22,16 @@ class BookListActivity : AppCompatActivity() {
         //listView.divider = null
 
         val books: ArrayList<BookItem> = ArrayList()
-        books.add(BookItem(1, "Title", "Author", "6", "0/2"))
-        books.add(BookItem(12, "Title1", "Author1", "61", "0/21"))
-        books.add(BookItem(13, "Title2", "Author2", "62", "0/22"))
-        books.add(BookItem(14, "Title3", "Author3", "63", "0/23"))
-        books.add(BookItem(15, "Title4", "Author4", "64", "0/24"))
-        books.add(BookItem(16, "Title5", "Author5", "65", "0/25"))
-        books.add(BookItem(17, "Title6", "Author6", "66", "0/26"))
-        books.add(BookItem(18, "Title7", "Author7", "67", "0/27"))
-        books.add(BookItem(19, "Title8", "Author8", "68", "0/28"))
-        books.add(BookItem(10, "Title9", "Author9", "69", "0/29"))
+        books.add(BookItem("Title", "Author"))
+        books.add(BookItem( "Title1", "Author1", ))
+        books.add(BookItem( "Title2", "Author2", ))
+        books.add(BookItem( "Title3", "Author3", ))
+        books.add(BookItem( "Title4", "Author4", ))
+        books.add(BookItem( "Title5", "Author5", ))
+        books.add(BookItem( "Title6", "Author6", ))
+        books.add(BookItem( "Title7", "Author7", ))
+        books.add(BookItem( "Title8", "Author8", ))
+        books.add(BookItem( "Title9", "Author9", ))
 
 
         val adapter = BookAdapter(this, books)
