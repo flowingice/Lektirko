@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
-class BookAdapter(private val context: Context,
-                  private val dataSource: ArrayList<BookItem>) : BaseAdapter() {
+class BookAdapter(
+    private val context: Context,
+    private val dataSource: ArrayList<BookItem>
+) : BaseAdapter() {
 
-    private val inflater: LayoutInflater
-            = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+    private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     override fun getCount(): Int {
         return dataSource.size

@@ -36,7 +36,8 @@
                     android:textColor="@color/colorWhiteText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/lbl_questions_answered"
-                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/lbl_hours_read"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_hours_read"
                     android:layout_marginTop="16dp"/>
             <TextView
                     android:textColor="@color/colorWhiteText"
@@ -66,33 +67,12 @@
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/book_title"
                 android:textSize="18sp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.478"
-            android:id="@+id/constraintLayout2" tools:ignore="RtlSymmetry">
 
-        <Button
-                android:text="@string/reading_log"
-                android:layout_width="134dp"
-                android:background="@drawable/btn_small_rounded"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:layout_height="40dp" android:id="@+id/button"
-                app:layout_constraintStart_toStartOf="parent"
-                android:onClick="showQuestions"
-                app:layout_constraintTop_toTopOf="parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
     <ListView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/listView" app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+            android:id="@+id/listView" app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
     </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>

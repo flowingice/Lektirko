@@ -1,8 +1,6 @@
 package hr.tvz.mmisic.lektirko
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_book_questions.*
@@ -30,11 +28,4 @@ class BookQuestionsActivity : AppCompatActivity() {
 
     }
 
-    fun showQuestions(view: View) {
-        val intent = Intent(this, BookReadingLogActivity::class.java).apply {
-            putExtra("TITLE", intent.getStringExtra("TITLE"))
-            putExtra("AUTHOR", intent.getStringExtra("AUTHOR"))
-        }
-        startActivity(intent)
-    }
 }

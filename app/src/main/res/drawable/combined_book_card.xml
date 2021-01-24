@@ -9,8 +9,8 @@
         </shape>
     </item>
     <item
-        android:drawable="@drawable/book_card_bg"
-        android:gravity="center"
-   />
+            android:drawable="@drawable/book_card_bg"
+            android:gravity="center"
+    />
 
 </layer-list>
