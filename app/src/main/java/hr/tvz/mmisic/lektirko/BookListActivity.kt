@@ -57,7 +57,7 @@ class BookListActivity : AppCompatActivity() {
         }
     }
 
-    fun setOnClickListener(listView: ListView){
+    private fun setOnClickListener(listView: ListView){
         listView.setOnItemClickListener { parent, _, position, _ ->
             val intent = Intent(this, BookQuestionsActivity::class.java).apply {
                 putExtra("TITLE", (parent.getItemAtPosition(position) as BookItem).bookTitle)

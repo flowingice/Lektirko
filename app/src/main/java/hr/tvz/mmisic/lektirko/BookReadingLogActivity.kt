@@ -1,8 +1,11 @@
 package hr.tvz.mmisic.lektirko
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.activity_book_questions.*
 import java.time.LocalDate
 
@@ -27,6 +30,24 @@ class BookReadingLogActivity : AppCompatActivity() {
         listView.adapter = adapter
         book_title.text = intent.getStringExtra("TITLE")
         author.text = intent.getStringExtra("AUTHOR")
+    }
+
+    fun showNewLogDialog(view: View) {
+        AddReadingLogDialog().show(supportFragmentManager, "AddReadingLogFragment")
+    }
+
+    fun clickSave(view: View) {
+        Log.i("BookReadingLogActivity", "clickSave: ")
+    }
+    fun clickCancel(view: View) {
+        val findFragmentByTag = supportFragmentManager.findFragmentByTag("AddReadingLogFragment")
+        if (findFragmentByTag != null){
+            (findFragmentByTag as? DialogFragment)?.dismiss()
+        }
+    }
+
+    fun showDatePickerFragment(view: View) {
+        DatePickerFragment().show(supportFragmentManager, "ReadingLogDateFragment")
     }
 
 }
