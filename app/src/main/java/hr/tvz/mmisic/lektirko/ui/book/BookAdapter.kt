@@ -1,4 +1,4 @@
-package hr.tvz.mmisic.lektirko
+package hr.tvz.mmisic.lektirko.ui.book
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 
 class BookAdapter(

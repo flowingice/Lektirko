@@ -1,4 +1,4 @@
-package hr.tvz.mmisic.lektirko
+package hr.tvz.mmisic.lektirko.ui.book
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,13 @@ import android.view.View
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import hr.tvz.mmisic.lektirko.BookQuestionsActivity
+import hr.tvz.mmisic.lektirko.R
+import hr.tvz.mmisic.lektirko.data.LektirkoDatabase
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
+import hr.tvz.mmisic.lektirko.data.repositories.BookRepository
 
 class BookListActivity : AppCompatActivity() {
 
@@ -17,6 +23,10 @@ class BookListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_list)
         Log.d("ListView", "Starting view with list")
+
+
+        val factory = BookViewModelFactory(repository = BookRepository(LektirkoDatabase(this)))
+        val viewModel = ViewModelProvider(this, factory).get(BookViewModel::class.java)
 
         val listView: ListView = findViewById(R.id.listView)
 

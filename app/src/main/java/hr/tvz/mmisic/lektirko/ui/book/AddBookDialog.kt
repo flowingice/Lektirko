@@ -1,4 +1,4 @@
-package hr.tvz.mmisic.lektirko
+package hr.tvz.mmisic.lektirko.ui.book
 
 
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import hr.tvz.mmisic.lektirko.R
 
 class AddBookDialog : DialogFragment() {
 
