@@ -3,6 +3,7 @@ package hr.tvz.mmisic.lektirko
 import android.os.Bundle
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import hr.tvz.mmisic.lektirko.data.db.entities.BookQuestion
 import kotlinx.android.synthetic.main.activity_book_questions.*
 
 class BookQuestionsActivity : AppCompatActivity() {

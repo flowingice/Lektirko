@@ -1,9 +1,10 @@
-package hr.tvz.mmisic.lektirko
+package hr.tvz.mmisic.lektirko.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 
 @Database(
     entities = [BookItem::class],

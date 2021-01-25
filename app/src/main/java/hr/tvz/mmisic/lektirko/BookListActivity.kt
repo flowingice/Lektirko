@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
+import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 
 class BookListActivity : AppCompatActivity() {
 

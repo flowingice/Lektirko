@@ -1,7 +1,8 @@
-package hr.tvz.mmisic.lektirko
+package hr.tvz.mmisic.lektirko.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 
 @Dao
 interface BookDao {
