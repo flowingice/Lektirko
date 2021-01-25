@@ -14,11 +14,11 @@ class BookQuestionsActivity : AppCompatActivity() {
         val listView: ListView = findViewById(R.id.listView)
 
         val questions: ArrayList<BookQuestion> = ArrayList()
-        questions.add(BookQuestion(1, "Question", "Answer1"))
-        questions.add(BookQuestion(12, "Question2", "Answer2"))
-        questions.add(BookQuestion(13, "Question3", ""))
-        questions.add(BookQuestion(14, "Question4", "not null"))
-        questions.add(BookQuestion(15, "Question5", "Answer5"))
+        questions.add(BookQuestion("Question", "Answer1"))
+        questions.add(BookQuestion("Question2", "Answer2"))
+        questions.add(BookQuestion("Question3", ""))
+        questions.add(BookQuestion("Question4", "not null"))
+        questions.add(BookQuestion("Question5", "Answer5"))
 
         val adapter = BookQuestionAdapter(this, questions)
         listView.adapter = adapter
