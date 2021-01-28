@@ -34,14 +34,12 @@ class BookAdapter(
 
         val bookAuthorField = rowView.findViewById(R.id.author) as TextView
         val bookTitleField = rowView.findViewById(R.id.book_title) as TextView
-        val bookHoursField = rowView.findViewById(R.id.hoursRead) as TextView
         val bookQuestionsField = rowView.findViewById(R.id.questionsAnswered) as TextView
 
         val currentBook = getItem(position) as BookItem
         bookAuthorField.text = currentBook.bookAuthor
         bookTitleField.text = currentBook.bookTitle
-        bookHoursField.text = "REMOVED"
-        bookQuestionsField.text = "NOT_IMPLEMENTED_YET"
+        bookQuestionsField.text = "0/0"
 
 
         return rowView
