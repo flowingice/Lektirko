@@ -11,7 +11,7 @@ class BookQuestionsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_questions)
 
-        val listView: ListView = findViewById(R.id.listView)
+        val listView: ListView = findViewById(R.id.rvBookQuestionItems)
 
         val questions: ArrayList<BookQuestion> = ArrayList()
         questions.add(BookQuestion("Question", "Answer1"))

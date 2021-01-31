@@ -58,11 +58,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" app:layout_constraintStart_toStartOf="parent"
                 android:onClick="showNewBookDialog"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/listView" app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
-    </ListView>
+            android:id="@+id/rvBookItems" app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

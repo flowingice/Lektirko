@@ -1,47 +1,45 @@
 package hr.tvz.mmisic.lektirko.ui.book
 
-import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import hr.tvz.mmisic.lektirko.BookQuestionsActivity
 import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
+import kotlinx.android.synthetic.main.adapter_book_list_layout.view.*
 
 class BookAdapter(
-    private val context: Context,
-    private val dataSource: ArrayList<BookItem>
-) : BaseAdapter() {
+    var items: List<BookItem>,
+    private val viewModel: BookViewModel
+) : RecyclerView.Adapter<BookAdapter.BookItemViewHolder>() {
 
-    private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-
-    override fun getCount(): Int {
-        return dataSource.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookItemViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_book_list_layout, parent, false)
+        return BookItemViewHolder(view)
     }
 
-    override fun getItem(position: Int): Any {
-        return dataSource[position]
+    override fun onBindViewHolder(holder: BookItemViewHolder, position: Int) {
+        val currBook = items[position]
+
+        holder.itemView.book_title.text = currBook.bookTitle
+        holder.itemView.author.text = currBook.bookAuthor
+
+        holder.itemView.book_adapter_layout.setOnClickListener {
+            val intent = Intent(it.context, BookQuestionsActivity::class.java).apply {
+                putExtra("TITLE", currBook.bookTitle)
+                putExtra("AUTHOR", currBook.bookAuthor)
+            }
+
+            it.context.startActivity(intent)
+
+        }
     }
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
+    override fun getItemCount(): Int {
+        return items.size
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        //val rowView = inflater.inflate(R.layout.adapter_book_list_layout, parent, false)
-        val rowView = convertView ?: inflater.inflate(R.layout.adapter_book_list_layout, parent, false)
-
-        val bookAuthorField = rowView.findViewById(R.id.author) as TextView
-        val bookTitleField = rowView.findViewById(R.id.book_title) as TextView
-        val bookQuestionsField = rowView.findViewById(R.id.questionsAnswered) as TextView
-
-        val currentBook = getItem(position) as BookItem
-        bookAuthorField.text = currentBook.bookAuthor
-        bookTitleField.text = currentBook.bookTitle
-        bookQuestionsField.text = "0/0"
-
-
-        return rowView
-    }
+    inner class BookItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
