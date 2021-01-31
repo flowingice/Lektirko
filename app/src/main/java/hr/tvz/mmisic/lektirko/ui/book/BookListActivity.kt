@@ -3,6 +3,7 @@ package hr.tvz.mmisic.lektirko.ui.book
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
@@ -10,12 +11,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.LektirkoDatabase
+import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 import hr.tvz.mmisic.lektirko.data.repositories.BookRepository
-import kotlinx.android.synthetic.main.activity_book_list.*
+import kotlinx.android.synthetic.main.activity_book_list.add_new_book_item
+import kotlinx.android.synthetic.main.activity_book_list.rvBookItems
 
 class BookListActivity : AppCompatActivity() {
-
-    private var TAG = "BookViewActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,23 +38,18 @@ class BookListActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
         })
 
-
-    }
-
-    fun showNewBookDialog(view: View) {
-        AddBookDialog().show(supportFragmentManager, "AddBookFragment")
-    }
-
-    fun clickSave(view: View) {
-        Log.i(TAG, "clickSave: ")
-    }
-
-    fun clickCancel(view: View) {
-        Log.i(TAG, "clickCancel: ")
-        val findFragmentByTag = supportFragmentManager.findFragmentByTag("AddBookFragment")
-        if (findFragmentByTag != null) {
-            (findFragmentByTag as? DialogFragment)?.dismiss()
+        add_new_book_item.setOnClickListener {
+            val dialog = AddBookDialog(this,
+            object : AddBookListener{
+                override fun onAddButtonClicked(item: BookItem) {
+                    viewModel.upsert(item)
+                }
+            })
+            dialog.show()
+            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         }
+
     }
+
 
 }

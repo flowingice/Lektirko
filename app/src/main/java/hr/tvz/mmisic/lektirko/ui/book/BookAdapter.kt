@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import hr.tvz.mmisic.lektirko.BookQuestionsActivity
 import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
-import kotlinx.android.synthetic.main.adapter_book_list_layout.view.*
+import kotlinx.android.synthetic.main.adapter_book_list_layout.view.author
+import kotlinx.android.synthetic.main.adapter_book_list_layout.view.book_adapter_layout
+import kotlinx.android.synthetic.main.adapter_book_list_layout.view.book_title
+
 
 class BookAdapter(
     var items: List<BookItem>,
@@ -30,6 +33,7 @@ class BookAdapter(
             val intent = Intent(it.context, BookQuestionsActivity::class.java).apply {
                 putExtra("TITLE", currBook.bookTitle)
                 putExtra("AUTHOR", currBook.bookAuthor)
+                putExtra("ID", currBook.id)
             }
 
             it.context.startActivity(intent)

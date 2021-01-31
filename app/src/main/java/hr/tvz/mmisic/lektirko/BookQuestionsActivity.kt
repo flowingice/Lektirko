@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import hr.tvz.mmisic.lektirko.data.db.entities.BookQuestion
-import kotlinx.android.synthetic.main.activity_book_questions.*
+import kotlinx.android.synthetic.main.activity_book_questions.author
+import kotlinx.android.synthetic.main.activity_book_questions.book_title
 
 class BookQuestionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,7 @@ class BookQuestionsActivity : AppCompatActivity() {
 
         book_title.text = intent.getStringExtra("TITLE")
         author.text = intent.getStringExtra("AUTHOR")
+        var id = intent.getStringExtra("ID")
 
     }
 
