@@ -1,18 +1,24 @@
-package hr.tvz.mmisic.lektirko.data
+package hr.tvz.mmisic.lektirko.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import hr.tvz.mmisic.lektirko.data.dao.BookDao
+import hr.tvz.mmisic.lektirko.data.dao.BookItem_BookQuestionDao
+import hr.tvz.mmisic.lektirko.data.dao.QuestionDao
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
+import hr.tvz.mmisic.lektirko.data.db.entities.BookQuestion
 
 @Database(
-    entities = [BookItem::class],
-    version = 1
+    entities = [BookItem::class, BookQuestion::class],
+    version = 3
 )
 abstract class LektirkoDatabase : RoomDatabase() {
 
     abstract fun getBookItemDao(): BookDao
+    abstract fun getBookQuestionDao(): QuestionDao
+    abstract fun getBookItemBookQuestionDao(): BookItem_BookQuestionDao
 
     companion object {
         @Volatile
@@ -28,6 +34,8 @@ abstract class LektirkoDatabase : RoomDatabase() {
             context.applicationContext,
             LektirkoDatabase::class.java,
             "LektirkoDB"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 }

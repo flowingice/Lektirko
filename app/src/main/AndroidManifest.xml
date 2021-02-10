@@ -10,7 +10,7 @@
             android:supportsRtl="true"
             android:name=".Lektirko"
             android:theme="@style/AppTheme">
-        <activity android:name=".BookQuestionsActivity">
+        <activity android:name=".ui.question.QuestionActivity">
         </activity>
         <activity android:name=".ui.book.BookListActivity"/>
         <activity android:name=".LoginActivity">

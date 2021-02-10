@@ -1,4 +1,4 @@
-package hr.tvz.mmisic.lektirko.data
+package hr.tvz.mmisic.lektirko.data.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -7,17 +7,18 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
+import hr.tvz.mmisic.lektirko.data.db.entities.BookQuestion
 
 @Dao
-interface BookDao {
+interface QuestionDao {
 
     //Upsert = insert + update
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(item: BookItem)
+    suspend fun upsert(item: BookQuestion)
 
     @Delete
-    suspend fun delete(item: BookItem)
+    suspend fun delete(item: BookQuestion)
 
-    @Query("SELECT * FROM book_items")
-    fun getAll(): LiveData<List<BookItem>>
+    @Query("SELECT * FROM book_questions")
+    fun getAll(): LiveData<List<BookQuestion>>
 }

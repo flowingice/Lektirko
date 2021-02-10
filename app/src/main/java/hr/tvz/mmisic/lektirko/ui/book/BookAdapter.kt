@@ -1,12 +1,11 @@
 package hr.tvz.mmisic.lektirko.ui.book
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import hr.tvz.mmisic.lektirko.BookQuestionsActivity
+import hr.tvz.mmisic.lektirko.ui.question.QuestionActivity
 import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 import kotlinx.android.synthetic.main.adapter_book_list_layout.view.author
@@ -31,7 +30,7 @@ class BookAdapter(
         holder.itemView.author.text = currBook.bookAuthor
 
         holder.itemView.book_adapter_layout.setOnClickListener {
-            val intent = Intent(it.context, BookQuestionsActivity::class.java).apply {
+            val intent = Intent(it.context, QuestionActivity::class.java).apply {
                 putExtra("TITLE", currBook.bookTitle)
                 putExtra("AUTHOR", currBook.bookAuthor)
                 putExtra("ID", currBook.id)

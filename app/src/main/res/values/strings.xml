@@ -28,4 +28,6 @@
     <string name="reading_number_of_pages">Broj stranica</string>
     <string name="add_reading_log">Dodaj zapis</string>
     <string name="reading_log">Dnevnik čitanja</string>
+    <string name="add_question">Dodaj pitanje</string>
+    <string name="question">Pitanje</string>
 </resources>

@@ -1,6 +1,6 @@
 package hr.tvz.mmisic.lektirko.data.repositories
 
-import hr.tvz.mmisic.lektirko.data.LektirkoDatabase
+import hr.tvz.mmisic.lektirko.data.db.LektirkoDatabase
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 
 class BookRepository(
