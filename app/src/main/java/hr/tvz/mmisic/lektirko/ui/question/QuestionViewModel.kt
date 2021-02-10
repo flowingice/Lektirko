@@ -21,4 +21,6 @@ class QuestionViewModel(
     }
 
     fun getAllQuestions() = repository.getAllQuestions()
+
+    fun getById(id: Int) = repository.getById(id)
 }

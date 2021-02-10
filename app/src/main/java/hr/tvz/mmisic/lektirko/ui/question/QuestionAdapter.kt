@@ -1,6 +1,7 @@
 package hr.tvz.mmisic.lektirko.ui.question
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.db.entities.BookQuestion
 import kotlinx.android.synthetic.main.adapter_book_question_layout.view.isAnswered
 import kotlinx.android.synthetic.main.adapter_book_question_layout.view.question
+import kotlinx.android.synthetic.main.adapter_book_question_layout.view.question_adapter_layout
 
 class QuestionAdapter(
     var items: List<BookQuestion>,
@@ -33,6 +35,13 @@ class QuestionAdapter(
         } else {
             holder.itemView.isAnswered.setTextColor(Color.GREEN)
             context.getString(R.string.answered)
+        }
+
+        holder.itemView.question_adapter_layout.setOnClickListener {
+            val intent = Intent(it.context, AnswerActivity::class.java).apply {
+                putExtra("ID", currQuestion.id)
+            }
+            it.context.startActivity(intent)
         }
 
     }

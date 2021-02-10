@@ -38,10 +38,6 @@ class QuestionActivity : AppCompatActivity(), KodeinAware {
         rvBookQuestionItems.layoutManager = LinearLayoutManager(this)
         rvBookQuestionItems.adapter = adapter
 
-        /*viewModel.getAllQuestions().observe(this, {
-            adapter.items = it
-            adapter.notifyDataSetChanged()
-        })*/
 
 
         book_title.text = intent.getStringExtra("TITLE")

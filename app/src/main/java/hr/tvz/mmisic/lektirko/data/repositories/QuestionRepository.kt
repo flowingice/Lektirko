@@ -12,4 +12,6 @@ class QuestionRepository(
     suspend fun delete(item: BookQuestion) = db.getBookQuestionDao().delete(item)
 
     fun getAllQuestions() = db.getBookQuestionDao().getAll()
+
+    fun getById(id: Int) = db.getBookQuestionDao().getById(id)
 }

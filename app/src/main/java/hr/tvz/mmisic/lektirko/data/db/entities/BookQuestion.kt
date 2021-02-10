@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "book_questions")
 data class BookQuestion(
     val question: String,
-    val answer: String?,
+    var answer: String?,
     val bookId: Int
 ){
 
