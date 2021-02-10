@@ -27,7 +27,7 @@ class BookQuestionsActivity : AppCompatActivity() {
 
         book_title.text = intent.getStringExtra("TITLE")
         author.text = intent.getStringExtra("AUTHOR")
-        var id = intent.getStringExtra("ID")
+        var id :Int = intent.getIntExtra("ID", -1)
 
     }
 

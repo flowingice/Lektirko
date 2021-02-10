@@ -1,6 +1,7 @@
 package hr.tvz.mmisic.lektirko.ui.book
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +39,11 @@ class BookAdapter(
 
             it.context.startActivity(intent)
 
+        }
+
+        holder.itemView.book_adapter_layout.setOnLongClickListener {
+            viewModel.delete(currBook)
+            true
         }
     }
 
