@@ -32,6 +32,7 @@ class LoginActivity : AppCompatActivity(), KodeinAware {
         viewModel.getAllUsers().observe(this, {
             if (it.isNotEmpty()){
                 startActivity(Intent(this, BookListActivity::class.java))
+                finish()
             }
         })
 
