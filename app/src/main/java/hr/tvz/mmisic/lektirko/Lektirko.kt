@@ -5,8 +5,10 @@ import hr.tvz.mmisic.lektirko.data.db.LektirkoDatabase
 import hr.tvz.mmisic.lektirko.data.repositories.BookQuestionRepository
 import hr.tvz.mmisic.lektirko.data.repositories.BookRepository
 import hr.tvz.mmisic.lektirko.data.repositories.QuestionRepository
+import hr.tvz.mmisic.lektirko.data.repositories.UserRepository
 import hr.tvz.mmisic.lektirko.ui.book.BookViewModelFactory
 import hr.tvz.mmisic.lektirko.ui.book_question.BookQuestionViewModelFactory
+import hr.tvz.mmisic.lektirko.ui.login.UserViewModelFactory
 import hr.tvz.mmisic.lektirko.ui.question.QuestionViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -27,6 +29,8 @@ class Lektirko : Application(), KodeinAware {
         bind() from provider { QuestionViewModelFactory(instance()) }
         bind() from singleton { BookQuestionRepository(instance()) }
         bind() from provider { BookQuestionViewModelFactory(instance()) }
+        bind() from singleton { UserRepository(instance()) }
+        bind() from provider { UserViewModelFactory(instance()) }
     }
 
 }

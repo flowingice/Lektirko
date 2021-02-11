@@ -7,18 +7,21 @@ import androidx.room.RoomDatabase
 import hr.tvz.mmisic.lektirko.data.dao.BookDao
 import hr.tvz.mmisic.lektirko.data.dao.BookItem_BookQuestionDao
 import hr.tvz.mmisic.lektirko.data.dao.QuestionDao
+import hr.tvz.mmisic.lektirko.data.dao.UserDao
 import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 import hr.tvz.mmisic.lektirko.data.db.entities.BookQuestion
+import hr.tvz.mmisic.lektirko.data.db.entities.User
 
 @Database(
-    entities = [BookItem::class, BookQuestion::class],
-    version = 3
+    entities = [BookItem::class, BookQuestion::class, User::class],
+    version = 4
 )
 abstract class LektirkoDatabase : RoomDatabase() {
 
     abstract fun getBookItemDao(): BookDao
     abstract fun getBookQuestionDao(): QuestionDao
     abstract fun getBookItemBookQuestionDao(): BookItem_BookQuestionDao
+    abstract fun getUserDao(): UserDao
 
     companion object {
         @Volatile
