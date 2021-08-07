@@ -46,7 +46,6 @@ class LoginActivity : AppCompatActivity(), KodeinAware {
                 Toast.makeText(this, "Sva polja moraju biti unesena", Toast.LENGTH_SHORT).show()
 
             }else{
-
                 val user = User(name,lastName , oib)
 
                 viewModel.upsert(user)
