@@ -5,14 +5,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".BookQuestionsActivity">
+        tools:context=".ui.question.QuestionActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingHorizontal="16dp"
             android:paddingTop="64dp"
-            android:paddingBottom="56dp"
+            android:paddingBottom="32dp"
             android:background="@drawable/purple_bg"
             android:id="@+id/constraintLayout" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
@@ -29,29 +29,27 @@
                     android:layout_height="wrap_content" android:id="@+id/questionsAnswered"
                     app:layout_constraintStart_toEndOf="@+id/lbl_questions_answered"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.404" app:layout_constraintTop_toBottomOf="@+id/hoursRead"
-                    android:layout_marginTop="32dp"/>
+                    app:layout_constraintHorizontal_bias="0.404"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
             <TextView
                     android:text="@string/questions_answered"
                     android:textColor="@color/colorWhiteText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/lbl_questions_answered"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lbl_hours_read"
-                    android:layout_marginTop="16dp"/>
-            <TextView
-                    android:textColor="@color/colorWhiteText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/hoursRead"
-                    app:layout_constraintStart_toEndOf="@+id/lbl_hours_read"
-                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"/>
-            <TextView
-                    android:text="@string/hours_read"
-                    android:textColor="@color/colorWhiteText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/lbl_hours_read"
-                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+                android:text="@string/add_question"
+                android:layout_width="134dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/btn_small_rounded"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_height="40dp" android:id="@+id/add_new_question"
+                app:layout_constraintTop_toBottomOf="@+id/author" app:layout_constraintStart_toStartOf="parent"/>
         <TextView
                 android:text="@string/book_title"
                 android:textColor="@color/colorWhiteText"
@@ -68,11 +66,11 @@
                 android:textSize="18sp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/listView" app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-    </ListView>
+            android:id="@+id/rvBookQuestionItems" app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
