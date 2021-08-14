@@ -15,7 +15,8 @@
     <string name="not_answered">Nije odgovoreno</string>
     <string name="log_reading">Evidentiraj čitanje</string>
     <string name="hours_read">Sati čitano:</string>
-    <string name="questions_answered">Pitanja \nodgovoreno:</string>
+    <!--<string name="questions_answered">Pitanja \nodgovoreno:</string>-->
+    <string name="questions_answered"> </string>
     <string name="title_activity_main2">MainActivity2</string>
     <!--
     This string is used for square devices and overridden by hello_world in
@@ -28,4 +29,8 @@
     <string name="reading_number_of_pages">Broj stranica</string>
     <string name="add_reading_log">Dodaj zapis</string>
     <string name="reading_log">Dnevnik čitanja</string>
+    <string name="add_question">Dodaj pitanje</string>
+    <string name="question">Pitanje</string>
+    <string name="answer">Odgovor</string>
+    <string name="error">Dogodila se greška</string>
 </resources>
