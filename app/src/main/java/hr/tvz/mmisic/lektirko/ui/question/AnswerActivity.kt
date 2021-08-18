@@ -32,7 +32,7 @@ class AnswerActivity : AppCompatActivity(), KodeinAware {
 
         val viewModel = ViewModelProvider(this, factory).get(QuestionViewModel::class.java)
 
-        viewModel.getAllQuestions().observe(this, {
+        viewModel.getAllQuestions().observe(this) {
             val currentQuestion = it.find { e -> e.id == id }
             if (currentQuestion != null) {
                 question.text = currentQuestion.question
@@ -49,7 +49,7 @@ class AnswerActivity : AppCompatActivity(), KodeinAware {
                 }
             }
 
-        })
+        }
 
     }
 

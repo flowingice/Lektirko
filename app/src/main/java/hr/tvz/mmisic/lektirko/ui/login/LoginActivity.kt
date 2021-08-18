@@ -29,12 +29,12 @@ class LoginActivity : AppCompatActivity(), KodeinAware {
 
         val viewModel = ViewModelProvider(this, factory).get(UserViewModel::class.java)
 
-        viewModel.getAllUsers().observe(this, {
-            if (it.isNotEmpty()){
+        viewModel.getAllUsers().observe(this) {
+            if (it.isNotEmpty()) {
                 startActivity(Intent(this, BookListActivity::class.java))
                 finish()
             }
-        })
+        }
 
         btn_login.setOnClickListener {
             val name = et_name.text.toString()

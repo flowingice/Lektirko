@@ -44,10 +44,10 @@ class QuestionActivity : AppCompatActivity(), KodeinAware {
         author.text = intent.getStringExtra("AUTHOR")
         val id: Int = intent.getIntExtra("ID", -1)
 
-        bQviewModel.getByBookId(id).observe(this, {
+        bQviewModel.getByBookId(id).observe(this) {
             adapter.items = it[0].questions
             adapter.notifyDataSetChanged()
-        })
+        }
 
         add_new_question.setOnClickListener {
             val dialog = AddQuestionDialog(this,id, object :AddQuestionListener{
