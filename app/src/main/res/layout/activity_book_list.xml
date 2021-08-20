@@ -29,6 +29,14 @@
                 app:layout_constraintTop_toTopOf="parent" android:hint="@string/search_local_books"
                 android:autofillHints="@string/search_local_books" tools:ignore="RtlSymmetry"
         />
+        <Button
+                android:text="@string/settings"
+                android:background="@drawable/btn_small_rounded"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/btn_settings"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" android:layout_marginEnd="8dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
