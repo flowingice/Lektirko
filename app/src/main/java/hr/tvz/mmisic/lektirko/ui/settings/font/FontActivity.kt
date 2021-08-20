@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_font.textView_quick_fox
 class FontActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FontUtil.updateTheme(this)
         setContentView(R.layout.activity_font)
 
         fontGroup.setOnCheckedChangeListener { _, checkedId ->

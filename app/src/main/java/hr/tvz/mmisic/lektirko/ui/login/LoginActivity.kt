@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.db.entities.User
 import hr.tvz.mmisic.lektirko.ui.book.BookListActivity
+import hr.tvz.mmisic.lektirko.ui.settings.font.FontUtil
 import kotlinx.android.synthetic.main.activity_login.btn_login
 import kotlinx.android.synthetic.main.activity_login.et_identifier
 import kotlinx.android.synthetic.main.activity_login.et_lastName
@@ -25,6 +26,7 @@ class LoginActivity : AppCompatActivity(), KodeinAware {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FontUtil.updateTheme(this)
         setContentView(R.layout.activity_login)
 
         val viewModel = ViewModelProvider(this, factory).get(UserViewModel::class.java)

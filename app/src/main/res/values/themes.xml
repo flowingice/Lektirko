@@ -11,6 +11,7 @@
     <style name="Theme.OpenDyslexic" parent="AppTheme">
         <item name="android:fontFamily">@font/opendyslexic3_regular</item>
         <item name="fontFamily">@font/opendyslexic3_regular</item>
+        <item name="android:lineSpacingMultiplier">0.1</item>
     </style>
 
     <style name="Theme.Arial" parent="AppTheme">

@@ -9,6 +9,7 @@ import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.db.entities.BookQuestion
 import hr.tvz.mmisic.lektirko.ui.book_question.BookQuestionViewModel
 import hr.tvz.mmisic.lektirko.ui.book_question.BookQuestionViewModelFactory
+import hr.tvz.mmisic.lektirko.ui.settings.font.FontUtil
 import kotlinx.android.synthetic.main.activity_book_questions.add_new_question
 import kotlinx.android.synthetic.main.activity_book_questions.author
 import kotlinx.android.synthetic.main.activity_book_questions.book_title
@@ -26,6 +27,7 @@ class QuestionActivity : AppCompatActivity(), KodeinAware {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FontUtil.updateTheme(this)
         setContentView(R.layout.activity_book_questions)
 
 

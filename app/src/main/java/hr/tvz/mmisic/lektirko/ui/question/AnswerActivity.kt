@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import hr.tvz.mmisic.lektirko.R
+import hr.tvz.mmisic.lektirko.ui.settings.font.FontUtil
 import kotlinx.android.synthetic.main.activity_question_answer_layout.answer
 import kotlinx.android.synthetic.main.activity_question_answer_layout.btn_cancel
 import kotlinx.android.synthetic.main.activity_question_answer_layout.btn_save
@@ -21,6 +22,7 @@ class AnswerActivity : AppCompatActivity(), KodeinAware {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FontUtil.updateTheme(this)
         setContentView(R.layout.activity_question_answer_layout)
 
         val id: Int = intent.getIntExtra("ID", -1)
