@@ -10,6 +10,7 @@
     <string name="book_title">Naslov knjige</string>
     <string name="book_author">Ime i prezime pisca</string>
     <string name="save">Spremi</string>
+    <string name="saved">Spremljeno</string>
     <string name="cancel">Odustani</string>
     <string name="answered">Odgovoreno</string>
     <string name="not_answered">Nije odgovoreno</string>
@@ -33,4 +34,12 @@
     <string name="question">Pitanje</string>
     <string name="answer">Odgovor</string>
     <string name="error">Dogodila se greška</string>
+
+    <string name="change_font">ODABERI FONT</string>
+    <string name="font_openDyslexic">Open Dyslexic 3</string>
+    <string name="font_tnr">Times New Roman</string>
+    <string name="font_arial">Arial</string>
+    <string name="quick_fox">The quick brown fox jumps over the lazy dog</string>
+    <string name="settings">Postavke</string>
+    <string name="preference_file_key">preference_settings_key</string>
 </resources>
