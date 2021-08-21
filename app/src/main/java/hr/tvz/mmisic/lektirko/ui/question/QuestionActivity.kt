@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_book_questions.add_new_question
 import kotlinx.android.synthetic.main.activity_book_questions.author
 import kotlinx.android.synthetic.main.activity_book_questions.book_title
 import kotlinx.android.synthetic.main.activity_book_questions.rvBookQuestionItems
+import kotlinx.android.synthetic.main.activity_book_questions.send_answers
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
@@ -59,6 +60,10 @@ class QuestionActivity : AppCompatActivity(), KodeinAware {
             })
             dialog.show()
             dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        }
+
+        send_answers.setOnClickListener {
+            val dialog = ConfirmSendAnswerEmailDialog(this, bQviewModel.getByBookId(id).value)
         }
 
 

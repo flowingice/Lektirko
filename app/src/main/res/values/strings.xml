@@ -42,4 +42,8 @@
     <string name="quick_fox">The quick brown fox jumps over the lazy dog</string>
     <string name="settings">Postavke</string>
     <string name="preference_file_key">preference_settings_key</string>
+    <string name="email_to">E-mail adresa</string>
+    <string name="confirm_send_email">Jeste li sigurni da želite poslati odgovore ?</string>
+    <string name="send">Pošalji</string>
+    <string name="send_answers">Pošalji odgovore</string>
 </resources>
