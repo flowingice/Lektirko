@@ -9,6 +9,8 @@ import hr.tvz.mmisic.lektirko.R
 import hr.tvz.mmisic.lektirko.data.db.entities.BookQuestion
 import hr.tvz.mmisic.lektirko.ui.book_question.BookQuestionViewModel
 import hr.tvz.mmisic.lektirko.ui.book_question.BookQuestionViewModelFactory
+import hr.tvz.mmisic.lektirko.ui.login.UserViewModel
+import hr.tvz.mmisic.lektirko.ui.login.UserViewModelFactory
 import hr.tvz.mmisic.lektirko.ui.settings.font.FontUtil
 import kotlinx.android.synthetic.main.activity_book_questions.add_new_question
 import kotlinx.android.synthetic.main.activity_book_questions.author
@@ -25,6 +27,8 @@ class QuestionActivity : AppCompatActivity(), KodeinAware {
     override val kodein: Kodein by kodein()
     private val factory: QuestionViewModelFactory by instance()
     private val bookQuestionFactory: BookQuestionViewModelFactory by instance()
+    private val userFactory: UserViewModelFactory by instance()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +36,10 @@ class QuestionActivity : AppCompatActivity(), KodeinAware {
         setContentView(R.layout.activity_book_questions)
 
 
+
         val viewModel = ViewModelProvider(this, factory).get(QuestionViewModel::class.java)
+        val userViewModel = ViewModelProvider(this, userFactory).get(UserViewModel::class.java)
+
 
         val bQviewModel = ViewModelProvider(this, bookQuestionFactory).get(BookQuestionViewModel::class.java)
 
@@ -63,7 +70,15 @@ class QuestionActivity : AppCompatActivity(), KodeinAware {
         }
 
         send_answers.setOnClickListener {
-            val dialog = ConfirmSendAnswerEmailDialog(this, bQviewModel.getByBookId(id).value)
+            bQviewModel.getByBookId(id).observe(this) {books ->
+                userViewModel.getAllUsers().observe(this) { users ->
+                    val dialog = ConfirmSendAnswerEmailDialog(this, books, users)
+                    dialog.show()
+                    dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+                }
+            }
+
+
         }
 
 

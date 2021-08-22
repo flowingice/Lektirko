@@ -12,4 +12,17 @@ data class User(
 
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null
+
+    override
+    fun toString(): String {
+        return "$firstName $lastName $oib"
+    }
+
+    fun allData(): String {
+        return "$firstName $lastName $oib"
+    }
+
+    fun shortData(): String {
+        return "$firstName $lastName"
+    }
 }
