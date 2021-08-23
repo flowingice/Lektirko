@@ -45,5 +45,7 @@
     <string name="email_to">E-mail adresa</string>
     <string name="confirm_send_email">Jeste li sigurni da želite poslati odgovore ?</string>
     <string name="send">Pošalji</string>
-    <string name="send_answers">Pošalji odgovore</string>
+    <string name="send_answers">Pošalji\nodgovore</string>
+    <string name="confirm_delete">Jeste li sigurni da želite obrisati knjigu</string>
+    <string name="delete">Obriši</string>
 </resources>

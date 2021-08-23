@@ -23,7 +23,7 @@
             android:background="@drawable/btn_rounded"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="100dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"/>
+            android:layout_marginBottom="80dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"/>
     <RadioGroup
             android:layout_width="wrap_content"
             android:layout_marginBottom="20dp"
@@ -52,6 +52,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/fontGroup" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:textSize="34sp"
-    />
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.7"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
