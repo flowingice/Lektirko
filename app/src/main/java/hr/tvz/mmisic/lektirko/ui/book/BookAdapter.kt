@@ -11,6 +11,7 @@ import hr.tvz.mmisic.lektirko.data.db.entities.BookItem
 import kotlinx.android.synthetic.main.adapter_book_list_layout.view.author
 import kotlinx.android.synthetic.main.adapter_book_list_layout.view.book_adapter_layout
 import kotlinx.android.synthetic.main.adapter_book_list_layout.view.book_title
+import kotlinx.android.synthetic.main.confirm_delete_layout.book_delete_placeholder
 
 
 class BookAdapter(
@@ -41,7 +42,10 @@ class BookAdapter(
         }
 
         holder.itemView.book_adapter_layout.setOnLongClickListener {
-            viewModel.delete(currBook)
+            val dialog = ConfirmDeleteDialog(it.context, viewModel, currBook)
+            dialog.show()
+            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            dialog.book_delete_placeholder.text = currBook.bookTitle
             true
         }
     }

@@ -4,8 +4,9 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#FFB967</color>
     <color name="colorSave">#FFB967</color>
-    <color name="colorCancel">#FB5A5A</color>
-    <color name="colorHint">#41262424</color>
+    <color name="colorCancel">#FF5F5F</color>
+    <color name="colorHint">#B30F0F0F</color>
     <color name="colorWhiteText">#EBEBEB</color>
     <color name="colorBackground">#FFFFFF</color>
+    <color name="fontColor">#1A1A1A</color>
 </resources>
