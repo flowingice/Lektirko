@@ -24,7 +24,7 @@
                 android:background="@drawable/inpt_search_rounded"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/editTextTextPersonName2" app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/search_bar" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" android:hint="@string/search_local_books"
 

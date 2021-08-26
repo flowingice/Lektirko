@@ -12,4 +12,6 @@ class BookRepository(
     suspend fun delete(item: BookItem) = db.getBookItemDao().delete(item)
 
     fun getAllBooks() = db.getBookItemDao().getAll()
+
+    fun getFilteredBooks(query: String) = db.getBookItemDao().getFilteredBooks(query)
 }

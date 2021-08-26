@@ -20,4 +20,7 @@ interface BookDao {
 
     @Query("SELECT * FROM book_items")
     fun getAll(): LiveData<List<BookItem>>
+
+    @Query("SELECT * FROM book_items WHERE bookTitle LIKE :query OR bookAuthor LIKE :query")
+    fun getFilteredBooks(query: String): LiveData<List<BookItem>>
 }
