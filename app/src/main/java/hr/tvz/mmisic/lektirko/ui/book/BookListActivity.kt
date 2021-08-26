@@ -3,6 +3,8 @@ package hr.tvz.mmisic.lektirko.ui.book
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.Toast
@@ -17,6 +19,7 @@ import hr.tvz.mmisic.lektirko.ui.settings.font.FontUtil
 import kotlinx.android.synthetic.main.activity_book_list.add_new_book_item
 import kotlinx.android.synthetic.main.activity_book_list.btn_settings
 import kotlinx.android.synthetic.main.activity_book_list.rvBookItems
+import kotlinx.android.synthetic.main.activity_book_list.search_bar
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
@@ -31,7 +34,6 @@ class BookListActivity : AppCompatActivity(), KodeinAware {
         super.onCreate(savedInstanceState)
         FontUtil.updateTheme(this)
         setContentView(R.layout.activity_book_list)
-        Log.d("ListView", "Starting view with list")
 
 
         val viewModel = ViewModelProvider(this, factory).get(BookViewModel::class.java)
@@ -42,11 +44,29 @@ class BookListActivity : AppCompatActivity(), KodeinAware {
         rvBookItems.layoutManager = LinearLayoutManager(this)
         rvBookItems.adapter = adapter
 
-        viewModel.getAllBooks().observe(this, Observer {
+        viewModel.getAllBooks().observe(this) {
             adapter.items = it
             adapter.notifyDataSetChanged()
-        })
+        }
 
+        search_bar.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                viewModel.getFilteredBooks("%${if (s.isNullOrBlank()) "" else s.toString()}%").observe(this@BookListActivity){
+                    adapter.items = it
+                    adapter.notifyDataSetChanged()
+                }
+
+            }
+        })
         add_new_book_item.setOnClickListener {
             val dialog = AddBookDialog(this,
                 object : AddBookListener {
